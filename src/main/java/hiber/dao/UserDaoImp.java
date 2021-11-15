@@ -33,6 +33,6 @@ public class UserDaoImp implements UserDao {
                 .createQuery("from User where car.model = :model and car.series =: series", User.class)
                 .setParameter("model", model)
                 .setParameter("series", series)
-                .getResultStream().findAny().get();
+                .getSingleResult();
     }
 }
